@@ -15,13 +15,16 @@ public class PlayerController : MonoBehaviour
     bool resetting = false;
     Color originalColour;
 
-
+    //UI AND HEADERS
     [Header("UI")]
     public GameObject inGamePanel;
     public GameObject gameOverPanel;
     public TMP_Text scoreText;
     public TMP_Text timerText;
     public TMP_Text winTimeText;
+
+    //CONTROLLERS
+    GameController gameController;
 
 
     // Start is called before the first frame update
@@ -41,6 +44,8 @@ public class PlayerController : MonoBehaviour
         gameOverPanel.SetActive(false);
         resetPoint = GameObject.Find("Reset Point");
         originalColour = GetComponent<Renderer>().material.color;
+        //GAME CONTROLLER: Finding the GameController in start function
+        gameController = FindObjectOfType<GameController>();
     }
 
     private void Update()
@@ -59,6 +64,9 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
         rb.AddForce(movement * speed);
+
+        if (gameController.controlType == ControlType.WorldTilt)
+            return; 
     }
 
     private void OnTriggerEnter(Collider other)
