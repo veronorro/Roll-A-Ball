@@ -57,10 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Pause.cs" />
+    <Compile Include="Assets\Scripts\SoundController.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\MovingObjects.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
+    <Compile Include="Assets\Scripts\Particles.cs" />
     <Compile Include="Assets\Scripts\TiltControls.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Teleporter.cs" />

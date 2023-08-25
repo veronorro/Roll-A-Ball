@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
 
     //CONTROLLERS
     GameController gameController;
+    SoundController soundController;
+
+    [Header("Sound")]
+    public AudioSource audioSource;
 
 
     // Start is called before the first frame update
@@ -46,6 +50,8 @@ public class PlayerController : MonoBehaviour
         originalColour = GetComponent<Renderer>().material.color;
         //GAME CONTROLLER: Finding the GameController in start function
         gameController = FindObjectOfType<GameController>();
+        //SOUND CONTROLLER
+        soundController = FindObjectOfType<SoundController>();
     }
 
     private void Update()
@@ -73,12 +79,21 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "PickUp")
         {
+            
             Destroy(other.gameObject);
             //Decrement the pickup count
             pickupCount -= 1;
             //Run the check pickups function
             SetcountText();
-        } 
+            //SOUND CONTROLLER
+            soundController.PlayPickupSound();
+            other.GetComponent<Particles>().CreatePartciles();
+        }
+        if (other.tag == "Wall")
+        {
+            audioSource.Play();
+        }
+      
     }
 
     void SetcountText()
@@ -105,6 +120,7 @@ public class PlayerController : MonoBehaviour
         inGamePanel.SetActive(false);
         //display timer on the win time text
         winTimeText.text = "Your Time Was: " + timer.GetTime().ToString("F2");
+        soundController.PlayWinSound();
 
         //Set velocity of rigidbody to 0
         rb.velocity = Vector3.zero;
@@ -127,10 +143,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            audioSource.Play();
+            print("Playt Sound");
+
+        }
+
         if (collision.gameObject.CompareTag("Respawn"))
         {
             StartCoroutine(ResetPlayer());
         }
+
+       
     }
 
     public IEnumerator ResetPlayer()

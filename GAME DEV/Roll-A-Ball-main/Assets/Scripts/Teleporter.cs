@@ -7,6 +7,8 @@ public class Teleporter : MonoBehaviour
     public GameObject myPartner;
     public bool canTeleport = true;
 
+    public float height;
+
     private void Start()
     {
         canTeleport = true;
@@ -18,7 +20,7 @@ public class Teleporter : MonoBehaviour
         {
             myPartner.GetComponent<Teleporter>().canTeleport = false;
             //Offset the y position so we don't clip into ground
-            Vector3 endPos = new Vector3(myPartner.transform.position.x, 1, myPartner.transform.position.z);
+            Vector3 endPos = new Vector3(myPartner.transform.position.x, myPartner.transform.position.y + height, myPartner.transform.position.z);
             other.transform.position = endPos;
         }
     }
