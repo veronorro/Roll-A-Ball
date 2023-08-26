@@ -146,7 +146,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             audioSource.Play();
-            print("Playt Sound");
 
         }
 
