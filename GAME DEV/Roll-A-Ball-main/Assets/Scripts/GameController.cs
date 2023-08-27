@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum ControlType { Normal, WorldTilt }
 
-public enum WallType { Normal, Punishing }
+public enum WallType { Frozen, Punishing }
+
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
@@ -14,7 +15,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (instance ==null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -40,6 +41,6 @@ public class GameController : MonoBehaviour
         if (_punishing)
             wallType = WallType.Punishing;
         else 
-            wallType = WallType.Normal;
+            wallType = WallType.Frozen;
     }
 }

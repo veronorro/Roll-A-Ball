@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\MovingObjects.cs" />
+    <Compile Include="Assets\Scripts\PunishingWallsToggleFix.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\Scripts\Particles.cs" />
     <Compile Include="Assets\Scripts\TiltControls.cs" />
@@ -69,7 +70,6 @@
     <Compile Include="Assets\Scripts\Teleporter.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scripts\RotatingObjects.cs" />
-    <Compile Include="Assets\Scripts\PunishingWallsToggleFix.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
