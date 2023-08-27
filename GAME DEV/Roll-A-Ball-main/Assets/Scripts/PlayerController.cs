@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     //CONTROLLERS
     GameController gameController;
     SoundController soundController;
+    CameraController cameraController;
+
 
     [Header("Sound")]
     public AudioSource audioSource;
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
         gameController = FindObjectOfType<GameController>();
         //SOUND CONTROLLER
         soundController = FindObjectOfType<SoundController>();
+        cameraController = FindObjectOfType<CameraController>();
     }
 
     private void Update()
@@ -73,6 +76,12 @@ public class PlayerController : MonoBehaviour
 
         if (gameController.controlType == ControlType.WorldTilt)
             return; 
+
+        if(cameraController.cameraStyle == CameraStyle.Free)
+        {
+            transform.eulerAngles = Camera.main.transform.eulerAngles;
+            movement = transform.TransformDirection(movement);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -154,6 +163,9 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ResetPlayer());
         }
 
+        if (collision.gameObject.CompareTag("Wall"))
+            if (gameController.wallType == WallType.Punishing)
+                StartCoroutine(ResetPlayer());
        
     }
 

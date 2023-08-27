@@ -26,16 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level5_12X12.unity
     guid: 2670e3f2a077af64b8f74d8ee0627e7a
-  - enabled: 1
-    path: Assets/Scenes/Level6_12X12.unity
-    guid: fc2f1c3a365ec02428f62de17550dcef
-  - enabled: 1
-    path: Assets/Scenes/Level7_12X12.unity
-    guid: eaff7a788572fdd4ab9000e8ea7619bd
-  - enabled: 1
-    path: Assets/Scenes/Level6_10X10X2.unity
-    guid: 3a34c900435373041877d4e37dda70a6
-  - enabled: 1
-    path: Assets/Scenes/Level7_6X6X3.unity
-    guid: 439b53b3c6739b04f9ac64a03eaf6e92
   m_configObjects: {}

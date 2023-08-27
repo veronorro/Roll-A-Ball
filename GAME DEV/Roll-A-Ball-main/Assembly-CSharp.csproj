@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Teleporter.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scripts\RotatingObjects.cs" />
+    <Compile Include="Assets\Scripts\PunishingWallsToggleFix.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

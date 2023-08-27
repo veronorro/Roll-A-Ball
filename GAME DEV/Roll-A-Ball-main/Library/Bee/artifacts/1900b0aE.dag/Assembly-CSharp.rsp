@@ -351,6 +351,7 @@
 "Assets/Scripts/Particles.cs"
 "Assets/Scripts/Pause.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/PunishingWallsToggleFix.cs"
 "Assets/Scripts/RotatingObjects.cs"
 "Assets/Scripts/Rotator.cs"
 "Assets/Scripts/SceneController.cs"
